@@ -5,32 +5,25 @@ namespace AmazingCalculator.Tests.Unit;
 
 public class IntCalculatorTests
 {
-    [Fact]
-    public void Add_ShouldAddTwoNumber_WhenNumbersArePositiveIntegers()
+    [Theory]
+    // [InlineData(5, 4, 9)]
+    // [InlineData(5, -5, 0)]
+    // [InlineData(-5, -5, -10)]
+    //[MemberData(nameof(AddData))]
+    [ClassData(typeof(AddData))]
+    public void Add_ShouldAddTwoNumbers_WhenNumbersAreIntegers(
+        int a, int b, int expected)
     {
         // Arrange
         var sut = new IntCalculator();
         
         // Act
-        var result = sut.Add(5, 4);
+        var result = sut.Add(a, b);
         
         // Assert
-        result.Should().Be(9);
+        result.Should().Be(expected);
     }
-    
-    [Fact]
-    public void Add_ShouldReturnZero_WhenAnOppositePositiveAndNegativeNumberAreAdded()
-    {
-        // Arrange
-        var sut = new IntCalculator();
 
-        // Act
-        var result = sut.Add(5, -5);
-    
-        // Assert
-        result.Should().Be(0);
-    }
-    
     [Fact]
     public void Subtract_ShouldSubtractTwoNumbers_WhenTheNumbersAreIntegers()
     {
@@ -94,5 +87,15 @@ public class IntCalculatorTests
     
         // Assert
         result.Should().Be(7);
+    }
+
+    public static IEnumerable<object[]> AddData()
+    {
+        return new[]
+        {
+            new object[] { 5, 4, 9 },
+            new object[] { 5, -5, 0 },
+            new object[] { -5, -5, -10 }
+        };
     }
 }
