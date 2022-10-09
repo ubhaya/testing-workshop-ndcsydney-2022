@@ -81,6 +81,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LegacyApp.Consumer", "1.Uni
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LegacyApp.Tests.Unit", "1.UnitTesting\3.Refactoring\tests\LegacyApp.Tests.Unit\LegacyApp.Tests.Unit.csproj", "{04AE5E34-548C-4DE4-A24C-7EE816096825}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.PerformanceTesting", "3.PerformanceTesting", "{AED0366A-F0AC-4F98-9366-F8E58CA9E80C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
