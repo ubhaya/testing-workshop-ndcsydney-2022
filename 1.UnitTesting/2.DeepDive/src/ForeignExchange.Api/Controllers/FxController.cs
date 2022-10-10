@@ -18,6 +18,7 @@ public class FxController : ControllerBase
     public async Task<IActionResult> GetQuote(
         string baseCurrency, string quoteCurrency, decimal amount)
     {
+        
         var quote = await _quoteService.GetQuoteAsync(baseCurrency, quoteCurrency, amount);
 
         if (quote is null)
